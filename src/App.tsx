@@ -1,17 +1,30 @@
 import './App.css'
 import './Pages/LoginPage.css'
-//import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './Components/Dashboard'
-import Header from './Layout/Header'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Dashboard from './Components/Admin/Dashboard'
+import Beneficiaries from './Pages/BeneficiariesPage';
+//import Header from './Layout/Header'
 import Sidebar from './Layout/Sidebar'
 //import SideBar from './Layout/Sidebar'
 function App() {
 
   return (
     <>
-      <Header />
+      <BrowserRouter>
       <Sidebar />
-      <Dashboard />
+
+          <nav>
+            <Link to="/dashboad">Dashboard</Link> |{" "}
+            <Link to="/beneficiaries">Beneficiaries</Link> |{" "}
+          
+          </nav>
+          <Routes>
+              < Route path="dashboard" element={<Dashboard />} />
+              < Route path="beneficiaries" element={<Beneficiaries />} />
+          </Routes>
+      </BrowserRouter>
+        
+   
 
   
     
