@@ -15,3 +15,10 @@
 .beneficiary-page {
   margin-left: 20%;
 }
+.payment-page {
+  margin-left: 20%;
+}
+table {
+  margin-left: 20%;
+  display: inline;
+}
