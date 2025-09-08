@@ -1,0 +1,16 @@
+.widget-card {
+    background-color: rgb(244, 244, 244);
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+     gap: 20px;
+}
+.widget-card {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;   
+   
+    margin-left: 17%;
+    padding: 10px;
+
+}

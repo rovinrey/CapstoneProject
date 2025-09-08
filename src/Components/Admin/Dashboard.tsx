@@ -21,11 +21,6 @@ function Dashboard() {
                 <Recent />
 
             </div>
-
-            
-
-
-
         </div> 
 
     );

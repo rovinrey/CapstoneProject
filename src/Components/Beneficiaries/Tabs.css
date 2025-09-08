@@ -1,0 +1,9 @@
+button {
+    width: 20%;
+    height: 30px;
+    border: none;
+}
+.Tabs {
+    background-color: gray;
+    text-decoration: none;
+}
