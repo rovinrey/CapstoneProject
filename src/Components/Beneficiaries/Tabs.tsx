@@ -1,44 +1,47 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import './Tabs.css'
-import '../Beneficiaries/TabsLInk/Apply.css'
+import { Link } from "react-router-dom";
+import "./Tabs.css";
+import "../Beneficiaries/TabsLInk/Apply.css";
 
-// tabs import files 
-import Apply from '../Beneficiaries/TabsLInk/Apply'
-function Overview() {
-  return <h1>Overview</h1>;
-}
+{/*
+import Overview from "../Beneficiaries/TabsLInk/Overview";
+import Payment from "../Beneficiaries/TabsLInk/Payment";
+import Schedule from "../Beneficiaries/TabsLInk/Schedule";
+import Documents from "../Beneficiaries/TabsLInk/Documents";
+import Apply from "../Beneficiaries/TabsLInk/Apply";
+*/}
 
-function Payment() {
-  return <h1>Payment</h1>;
-}
+import { useState } from "react";
 
-function Schedule() {
-  return <h1>Schedule</h1>;
-}
-function Documents() {
-  return <h1>Documents</h1>;
-}
 function Tabs() {
-  return (
-    <BrowserRouter>
-      {/* Navigation */}
-      <nav>
-        <Link to="/overview">Overview</Link> |{" "}
-        <Link to="/payment">Payment</Link> |{" "}
-        <Link to="/schedule">Schedule</Link> |{" "}
-        <Link to="/documents">Documents</Link> |{" "}
-        <Link to="/apply">Apply</Link>
-      </nav>
+  const [menu, setMenu] = useState("overview");
 
-      {/* Routes */}
-      <Routes>
-        <Route path="/overview" element={<Overview/>} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/schedule" element={<Schedule />} />
-        <Route path="/documents" element={<Documents />} />
-        <Route path="/apply" element={<Apply />} />
-      </Routes>
-    </BrowserRouter>
+  return (
+    <>
+      {/* Navigation */}
+      <ul>
+        <li onClick={() => setMenu("overview")}>
+          <Link to="/overview">Overview</Link>
+          {menu === "overview" && <hr />}
+        </li>
+        <li onClick={() => setMenu("payment")}>
+          <Link to="/payment">Payment</Link>
+          {menu === "payment" && <hr />}
+        </li>
+        <li onClick={() => setMenu("schedule")}>
+          <Link to="/schedule">Schedule</Link>
+          {menu === "schedule" && <hr />}
+        </li>
+        <li onClick={() => setMenu("documents")}>
+          <Link to="/documents">Documents</Link>
+          {menu === "documents" && <hr />}
+        </li>
+        <li onClick={() => setMenu("apply")}>
+          <Link to="/apply">Apply</Link>  
+          {menu === "apply" && <hr />}
+        </li>
+      </ul>
+    </>
   );
 }
+
 export default Tabs;

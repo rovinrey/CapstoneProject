@@ -1,15 +1,64 @@
-import Tabs from './Tabs'
-import Widget from './BeneficiaryWidget';
+import { FaCheckCircle } from 'react-icons/fa';
+import { FaPesoSign } from 'react-icons/fa6'
+import { IoIosBriefcase } from 'react-icons/io'
+
+import Tabs from './Tabs';
+import './BeneficiaryDashboard.css'
 function BeneficiaryDashboard() {
     return(
-        <>
-        <h2>Welcome back, Maria!</h2>
-        <p>Heres tour latest dashboard and updates</p>
+        <div className="dashboard-container">
+            <div className="welcome-banner">
+                <h2>Welcome back, Maria!</h2>
+                <p>Here's your program dashboard and latest updates</p>
+                <span className="status-badge">active</span>
+                <p>You are currently enrolled and participating in the program.</p>
+            </div>
 
-        <Widget />
+            <div className="summary-cards">
+                <div className="card">
+                    <div className="card-icon">
+                        <FaCheckCircle/>
+                    </div>
+                    <div className="card-content">
+                        <h3>Application ID</h3>
+                        <p>BEN001</p>
+                    </div>
+                </div>
 
-        <Tabs />
-        </>
+                <div className="card">
+                    <div className="card-icon">
+                        <FaPesoSign/>
+                    </div>
+                    <div className="card-content">
+                        <h3>Total Earnings</h3>
+                        <p>15,750</p>
+                    </div>
+                </div>
+
+                <div className="card">
+                    <div className="card-icon">
+                        <IoIosBriefcase />
+                    </div>
+                <div className="card-content">
+                    <h3>Program</h3>
+                    <p>TUPAD - Community Cleaning</p>
+                </div>
+            </div>
+        </div>
+        <div className="program-progress">
+            <div className="program-progress-header">
+                <h3>Program Progress</h3>
+                <span>Step 3 of 5</span>
+            </div>
+            <div className="progress-bar-container">
+                <div className="progress-bar"></div>
+            </div>
+                <p className="progress-text">You're 60% through your program</p>
+            </div>
+
+            {/* Horizpntal Tabs*/}
+            <Tabs />
+        </div>     
     );
-}
-export default  BeneficiaryDashboard;
+};
+export default BeneficiaryDashboard;

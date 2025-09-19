@@ -5,7 +5,6 @@ import { IoIosBriefcase } from 'react-icons/io'
 import './BeneficiaryWidget.css'
 function widget(props:any) {
     return(
-        <>
         <div className="widget-card">
             <div className='Application-id'> 
                 <FaCheckCircle />
@@ -25,7 +24,6 @@ function widget(props:any) {
                 <p>TUPAD - Community Cleaning</p>
             </div>
         </div>
-        </>
     );
 };
 export default widget;

@@ -1,33 +1,50 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from '../hooks/AuthContext'
+import './LoginPage.css'
 
 export default function Login() {
-  const [form, setForm] = useState({ email: "", password: "" });
-  const { login } = useAuth() as { login: (data: { email: string; role: string; token: string }) => void };
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
-
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleLogin = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
-    // Mock authentication (replace with backend call)
-    let role = form.email.includes("admin") ? "admin" : "beneficiary";
-    login({ email: form.email, role, token: "mock-token" });
-
-    if (role === "admin") navigate("/admin");
-    else navigate("/beneficiary");
+    if (username === "admin" && password === "admin123") {
+      navigate("/admin");
+    } else if (username === "beneficiary" && password === "benef123") {
+      navigate("/beneficiary");
+    } else {
+      alert("Invalid credentials!");
+    }
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="email" placeholder="Email" onChange={handleChange} />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} />
-        <button type="submit">Login</button>
+    <div className="login-container">
+      <form onSubmit={handleLogin} className="login-box">
+        <h2 className="login-title">Login</h2>
+
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="login-input"
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="login-input"
+          required
+        />
+
+        <button type="submit" className="login-btn">
+          Login
+        </button>
       </form>
     </div>
   );

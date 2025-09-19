@@ -1,16 +1,26 @@
 .widget-card {
-    background-color: rgb(244, 244, 244);
-    width: 250px;
-    height: 150px;
-    border-radius: 10px;
-     gap: 20px;
-}
-.widget-card {
     display: flex;
     flex-direction: row;
     margin-top: 20px;   
-   
-    margin-left: 17%;
     padding: 10px;
+    border-radius: 10px;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+}
+.Application-id {
+    width: 30%;
+    background-color: red;
+
+}
+.Total-earnings {
+    width: 30%;
+    background-color: blue;
+
+}
+.Program {
+    width: 30%;
+    background-color: yellow;
 
 }
