@@ -1,4 +1,4 @@
-import ScheduleWidget from "../../widgets/scheduleWidget";
+import ScheduleWidget from "../../../widgets/scheduleWidget";
 function WorkSchedule() {
     return(
         <div>

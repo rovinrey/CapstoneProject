@@ -1,8 +1,36 @@
-button {
-    width: 20%;
-    height: 30px;
-    border: none;
+/* Tabs.css */
+
+.tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid #e0e0e0;
+  background-color: #f9f9f9;
 }
-.Tabs {
-    text-decoration: none;
+
+.tabs li {
+  margin: 0;
+}
+
+.tabs a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.tabs a:hover {
+  background-color: #eaeaea;
+  color: #0077ff;
+}
+
+/* Active Tab */
+.tabs a.active {
+  border-bottom: 3px solid #0077ff;
+  color: #0077ff;
+  font-weight: 600;
+  background-color: #fff;
 }

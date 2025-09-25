@@ -7,7 +7,7 @@ function Dashboard() {
     return (  
         <div>  
             <div className="heading">
-                <h1>Dashboard</h1>
+                <h2>Dashboard</h2>
                 <p>Overview of TUPAD and Pangkabuhayan programs</p>          
             </div>
             <div className='dashboard-card-container'>

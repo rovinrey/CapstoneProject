@@ -7,8 +7,7 @@ function DashboardCard({ number, name }: { number: number; name: string }) {
             <div className='dashboard-card'>
                  <p>{name}</p>
                 <h3>{number}</h3>
-                <img alt="" />
-               
+                <img alt="" />           
             </div>
         </div>
       

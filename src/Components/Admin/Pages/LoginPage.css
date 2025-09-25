@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  gap: 40px;
   font-family: Arial, sans-serif;
 }
 

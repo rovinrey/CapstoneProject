@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './LoginPage.css'
 
+//import { BeneficiaryDashboard } from '../../Beneficiaries/BeneficiaryDashboard'
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -11,9 +12,9 @@ export default function Login() {
     e.preventDefault();
 
     if (username === "admin" && password === "admin123") {
-      navigate("/admin");
+      navigate("");
     } else if (username === "beneficiary" && password === "benef123") {
-      navigate("/beneficiary");
+      navigate("/BeneficiaryDashboard");
     } else {
       alert("Invalid credentials!");
     }
@@ -21,16 +22,17 @@ export default function Login() {
 
   return (
     <div className="login-container">
+      <h1>TUPAD and Pangkabuhayan <br/>Management System</h1>
       <form onSubmit={handleLogin} className="login-box">
         <h2 className="login-title">Login</h2>
 
         <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          className="login-input"
-          required
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="login-input"
+            required
         />
 
         <input
@@ -48,4 +50,4 @@ export default function Login() {
       </form>
     </div>
   );
-}
+};

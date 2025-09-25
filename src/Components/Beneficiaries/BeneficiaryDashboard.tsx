@@ -2,8 +2,16 @@ import { FaCheckCircle } from 'react-icons/fa';
 import { FaPesoSign } from 'react-icons/fa6'
 import { IoIosBriefcase } from 'react-icons/io'
 
-import Tabs from './Tabs';
+
+import { Routes, Route } from 'react-router-dom';
+import Overview from './TabsLInk/Overview'
+import Payments from './TabsLInk/Payment'
+import Schedule from './TabsLInk/Schedule'
+import Documents from './TabsLInk/Documents'
+import Apply from './TabsLInk/Apply'
+
 import './BeneficiaryDashboard.css'
+import Tabs from './Tabs';
 function BeneficiaryDashboard() {
     return(
         <div className="dashboard-container">
@@ -58,6 +66,15 @@ function BeneficiaryDashboard() {
 
             {/* Horizpntal Tabs*/}
             <Tabs />
+         
+            <Routes>
+                <Route path="dashboard" element={<Overview/>} />
+                <Route path="beneficiaries" element={<Payments />} />
+                <Route path="programs" element={<Schedule />} />
+                <Route path="payment" element={<Documents />} />
+                <Route path="reports" element={<Apply />} />    
+            </Routes>
+            
         </div>     
     );
 };
