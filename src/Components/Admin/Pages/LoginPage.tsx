@@ -12,9 +12,9 @@ export default function Login() {
     e.preventDefault();
 
     if (username === "admin" && password === "admin123") {
-      navigate("");
+      navigate("/Dashboard");
     } else if (username === "beneficiary" && password === "benef123") {
-      navigate("/BeneficiaryDashboard");
+      navigate("/BeneficiaryDashboard") ;
     } else {
       alert("Invalid credentials!");
     }
