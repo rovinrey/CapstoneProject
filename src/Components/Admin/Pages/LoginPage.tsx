@@ -13,7 +13,7 @@ export default function Login() {
 
     if (username === "admin" && password === "admin123") {
       navigate("/Dashboard");
-    } else if (username === "beneficiary" && password === "benef123") {
+    } else if (username === "beneficiary" && password === "pass123") {
       navigate("/BeneficiaryDashboard") ;
     } else {
       alert("Invalid credentials!");

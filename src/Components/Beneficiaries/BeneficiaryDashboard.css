@@ -38,7 +38,9 @@
   font-size: 0.8rem;
   font-weight: 500;
   margin-top: 5px; /* Spacing below the text */
-}
+  width: 50px;
+  text-align: center;
+} 
 
 .summary-cards {
   display: grid;

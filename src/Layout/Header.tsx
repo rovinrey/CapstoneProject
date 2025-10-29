@@ -1,5 +1,5 @@
 
-import './header.css'; // Import the CSS file
+import './header.css'; 
 
 const Header = () => {
   return (
@@ -7,15 +7,15 @@ const Header = () => {
       <div className="header-container">
         {/* Left Section: Logo/App Title */}
         <div className="logo-section">
-          <h1>TUPAD & Pangkabuhayan</h1>
-          <p>Beneficiary Portal</p>
+              <h1>TUPAD & Pangkabuhayan</h1>
+              <p>Beneficiary Portal</p>
         </div>
 
         {/* Right Section: User Info and Sign Out */}
         <div className="user-info-section">
           <div className="user-details">
-            <p>Maria Santos</p>
-            <p>BEN001</p>
+                <p>Maria Santos</p>
+                <p>BEN001</p>
           </div>
           <button className="sign-out-button">
             Sign Out
