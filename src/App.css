@@ -1,35 +1,33 @@
-.dashboard-layout {
-  display: flex;
-  min-height: 100vh;
-}
-.heading {
-  display: flex;
-  flex-direction: column;
-}
-.dashboard-card {
-  display: flex;
-  flex-direction: column;
-}
-.beneficiary-page {
-  margin-left: 20%;
-}
-.payment-page {
-  margin-left: 20%;
-}
+/*
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*/
+
 table {
   display: inline-block;
 }
-li {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
-
-/* tabs.tsz css here */
-/* Small screen tweaks */
-@media (max-width: 480px) {
-  .tabs li a {
-    font-size: 14px;
-    padding: 10px;
-  }
+button {
+  cursor: pointer;
+}
+input, select, textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+label {
+  margin-bottom: 6px;
+  display: block;
+  font-weight: 600;
+}
+h2 {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
 }

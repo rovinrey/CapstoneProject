@@ -1,63 +1,129 @@
 /* Sidebar.css */
+
+/* Global Reset */
 * {
-  margin: 0px;
-  padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
 }
+
+/* --- Essential Fixed Sidebar Properties --- */
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-  height: 100%;
-  background-color: #fff;
-  border-right: 1px solid #e0e0e0;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
-  position: fixed;
-  overflow: auto;
+    display: flex;
+    flex-direction: column;
+    width: 250px; /* Fixed width */
+    height: 100vh; /* Full viewport height */
+    
+    /* FIX: These properties make the sidebar FIXED */
+    position: fixed; 
+    top: 0;
+    left: 0;
+
+    background-color: #fff;
+    border-right: 1px solid #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    overflow-y: auto; /* Allows the sidebar content to scroll if it gets too long */
+    z-index: 100; /* Ensures it stays above other content */
+}
+
+/* --- Header Styling (Matches Image) --- */
+.sidebar-header {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
 }
 
 .sidebar-header h1 {
-  font-size: 1.5rem;
-  margin-left: 15px;
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 2px;
 }
 
-.sidebar-header p {
-  font-size: 0.8rem;
-  color: #777;
-  margin:  15px;
+.sidebar-header .subtitle {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 8px;
 }
 
+.sidebar-header .welcome-text {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+/* --- Navigation Menu --- */
 .nav-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0 15px;
+    margin: 10px 0;
+    flex-grow: 1; /* Allows the nav menu to take up available space */
 }
 
 .nav-item a {
-  display: flex;
-  align-items: center;
-  padding: 12px 15px;
-  margin-bottom: 5px;
-  text-decoration: none;
-  color: #333;
-  border-radius: 8px;
-  transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .nav-item a:hover {
-  background-color: #f0f0f0;
+    background-color: #f5f5f5;
 }
 
+/* --- Active State Styling (Matches Image) --- */
 .nav-item.active a {
-  background-color: #1E1E1E; /* Dark background for active state */
-  color: white;
+    background-color: #1e1e1e; /* Dark background */
+    color: white; /* White text */
+    font-weight: bold;
 }
 
-.sidebar-footer {
-  margin-top: auto; /* Pushes the footer to the bottom */
-  border-top: 1px solid #e0e0e0;
-  padding-top: 20px;
+/* --- Icon Styling (Placeholders) --- */
+/* You MUST replace this with a real icon library (like Font Awesome) */
+.nav-item a i,
+.sidebar-footer a i {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    /* Placeholder styles - replace with your icon font properties */
+    display: inline-block; 
+    text-align: center;
 }
-.main {
-  margin-left: 20%;
+
+.nav-item.active a i {
+    color: white;
+}
+
+/* --- Sidebar Footer (Settings) --- */
+.sidebar-footer {
+    margin-top: auto; /* Pushes the footer to the bottom */
+    border-top: 1px solid #e0e0e0;
+    padding: 15px;
+}
+
+.sidebar-footer a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.sidebar-footer a:hover {
+    background-color: #f5f5f5;
+}
+
+/* --- Main Content Offset --- */
+/* This class must be applied to your main page container to prevent content from going underneath the fixed sidebar */
+.main-content {
+    margin-left: 260px; /* IMPORTANT: Must match the sidebar width */
+    padding: 20px;
 }

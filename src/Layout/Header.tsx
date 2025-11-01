@@ -2,6 +2,7 @@
 import './header.css'; 
 
 const Header = () => {
+ 
   return (
     <header>
       <div className="header-container">

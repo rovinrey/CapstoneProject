@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 // Admin UI components
 import Sidebar from './Layout/Sidebar';
@@ -9,7 +9,7 @@ import Beneficiaries from './Components/Admin/Pages/BeneficiariesPage';
 import Programs from './Components/Admin/Pages/Programs';
 import PaymentPage from './Components/Admin/Pages/PaymentPage';
 import Reports from './Components/Admin/Pages/Reports';
-
+ 
 // Beneficiary UI pages
 import BeneficiaryDashboard from './Components/Beneficiaries/BeneficiaryDashboard';
 
@@ -23,23 +23,25 @@ import Apply from './Components/Beneficiaries/TabsLInk/Apply';
 function App() {
   return (
     <Router>
+     
       <Routes>
         {/* Public route */}
         <Route path="/" element={<LoginPage />} />
 
-        {/* Admin routes (with sidebar layout) */}
+        {/* Admin routes  */}
+
         <Route
           path="/dashboard/*"
           element={
-            <div className='side-bar'>
+            <div>
                 <Sidebar />
               <div>
                 <Routes>
-                        <Route path="/" element={<Dashboard />} />
-                        <Route path="beneficiaries" element={<Beneficiaries />} />
-                        <Route path="programs" element={<Programs />} />
-                        <Route path="payment" element={<PaymentPage />} />
-                        <Route path="reports" element={<Reports />} />
+                      <Route path="/" element={<Dashboard />} />
+                      <Route path="/Beneficiaries" element={<Beneficiaries />} />
+                      <Route path="/Programs" element={<Programs />} />
+                      <Route path="/Payment" element={<PaymentPage />} />
+                      <Route path="/Reports" element={<Reports />} />
                 </Routes>
               </div>
             </div>
