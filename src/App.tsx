@@ -33,9 +33,9 @@ function App() {
         <Route
           path="/dashboard/*"
           element={
-            <div>
+            < div className="app-container">
                 <Sidebar />
-              <div>
+              <div className="main-content">
                 <Routes>
                       <Route path="/" element={<Dashboard />} />
                       <Route path="/Beneficiaries" element={<Beneficiaries />} />

@@ -14,15 +14,13 @@
     margin-top: 20px;   
     gap: 20px;
     padding: 10px;
-    margin-left: 210px;
+
 
 }
 .heading {
     display: flex;
-    margin-left: 250px;
 }
 .recent-activity {
-    margin-left: 20%;
     padding: 20px;
     background-color: rgb(244, 244,244);
 }

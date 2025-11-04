@@ -22,11 +22,10 @@ function Sidebar() {
   return (
     <div className="sidebar">
       
-      {/* Sidebar Header (Top Section) */}
+      {/* Sidebar Header */}
       <div className="sidebar-header">
         <h2>TUPAD & Pangkabuhayan</h2>
         <p className="subtitle">Management System</p>
-        <p className="welcome-text">Welcome, System Administrator</p>
       </div>
 
       {/* Navigation Menu */}
@@ -39,7 +38,7 @@ function Sidebar() {
           >
             {/* 2. Corrected: Use <Link> instead of <a> with an embedded component */}
             <Link to="/dashboard">Dashboard</Link>
-            {menu === "dashboard" ? <hr/> : null}
+            {menu === "dashboard" }
           </li>
           
           <li 
@@ -47,7 +46,7 @@ function Sidebar() {
             className={menu === "beneficiaries" ? "active" : ""}
           >
             <Link to="/dashboard/Beneficiaries">Beneficiaries</Link>
-            {menu === "beneficiaries" ? <hr/> : null}
+            {menu === "beneficiaries" }
           </li>
           
           <li 
@@ -55,7 +54,7 @@ function Sidebar() {
             className={menu === "programs" ? "active" : ""}
           >
             <Link to="/dashboard/Programs">Programs</Link>
-            {menu === "programs" ? <hr/> : null}
+            {menu === "programs" }
           </li>
           
           <li 
@@ -63,7 +62,7 @@ function Sidebar() {
             className={menu === "payment" ? "active" : ""}
           >
             <Link to="/dashboard/Payment">Payment</Link>
-            {menu === "payment" ? <hr/> : null}
+            {menu === "payment" }
           </li>
           
           <li 
@@ -71,7 +70,7 @@ function Sidebar() {
             className={menu === "reports" ? "active" : ""}
           >
             <Link to="/dashboard/Reports">Reports</Link>
-            {menu === "reports" ? <hr/> : null}
+            {menu === "reports" }
           </li>
         </ul>
       </nav>

@@ -9,7 +9,7 @@ function Programs() {
                 <p>Manage TUPAD and Pangkabuhayan programs</p>
             </div>
 
-            <input type='text' placeholder='Search Programs'></input>
+            <input className='search-program' type='text' placeholder='Search Programs'></input>
             
         </div>
         <div className='program-list'>

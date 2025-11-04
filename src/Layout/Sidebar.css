@@ -11,7 +11,7 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    width: 250px; /* Fixed width */
+    width: 270px; /* Fixed width */
     height: 100vh; /* Full viewport height */
     
     /* FIX: These properties make the sidebar FIXED */
@@ -51,32 +51,32 @@
 }
 
 /* --- Navigation Menu --- */
-.nav-menu {
+li {
     list-style: none;
     padding: 0 15px;
     margin: 10px 0;
     flex-grow: 1; /* Allows the nav menu to take up available space */
+    text-align: center;
 }
 
-.nav-item a {
+li a {
     display: flex;
     align-items: center;
     padding: 10px 15px;
     margin-bottom: 5px;
     text-decoration: none;
     color: #333;
-    border-radius: 6px;
+    border-radius: 10px;
     transition: background-color 0.2s, color 0.2s;
-    font-size: 1rem;
-    font-weight: 500;
+    text-align: center;
 }
 
-.nav-item a:hover {
+li a:hover {
     background-color: #f5f5f5;
 }
 
 /* --- Active State Styling (Matches Image) --- */
-.nav-item.active a {
+li.active a {
     background-color: #1e1e1e; /* Dark background */
     color: white; /* White text */
     font-weight: bold;

@@ -1,15 +1,21 @@
-.program-page {
-    margin-left: 20%;
-    padding-left: 10px;
-}
+
 .program-card {
-    margin-left: 20%;
     width: 300px;
     height: 300px;
     background-color: rgb(244, 244, 244);
     border-radius: 10px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 20px;
 }
 .program-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+.search-program {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(227, 227, 227);
+    margin-top: 20px;
 }

@@ -6,22 +6,24 @@ function Reports () {
             <p>Comprehensive program and beneficiary insights</p>
 
             {/*Summary Cards*/}
-            <DashboardCard 
-                number={0} 
-                name={"Total Beneficiaries"} 
-            />
-            <DashboardCard 
-                number={0} 
-                name={"Active Programs"} 
-            />
-            <DashboardCard 
-                number={0} 
-                name={"Total Distributed"} 
-            />
-            <DashboardCard 
-                number={0} 
-                name={"Success Rate"} 
-            />
+            <div className="summary-cards" >
+                <DashboardCard 
+                    number={0} 
+                    name={"Total Beneficiaries"} 
+                />
+                <DashboardCard 
+                    number={0} 
+                    name={"Active Programs"} 
+                />
+                <DashboardCard 
+                    number={0} 
+                    name={"Total Distributed"} 
+                />
+                <DashboardCard 
+                    number={0} 
+                    name={"Success Rate"} 
+                />
+            </div>
         </>
     );
 };

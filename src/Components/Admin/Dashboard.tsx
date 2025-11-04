@@ -5,7 +5,7 @@ import Recent from "./RecentActivities";
 function Dashboard() {
   return (
     <div>
-        <div style={{ marginLeft: "250px", padding: "10px" }}>
+        <div>
             <h2>Dashboard</h2>
             <p>Overview of TUPAD and Pangkabuhayan programs</p>
         </div>
