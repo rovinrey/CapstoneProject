@@ -13,7 +13,7 @@ function PaymentPage () {
             />
             <PaymentPageCard
                 name={"Pending Payment"} 
-                amount={0} 
+                amount={1200} 
             />
             <PaymentPageCard 
                 name={"Completed this month"} 

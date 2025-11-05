@@ -1,102 +1,103 @@
-.personal-info-container {
-    font-family: Arial, sans-serif;
-    padding: 2rem;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    max-width: 900px;
-    margin: 2rem auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+/* General container */
+.application-form-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', sans-serif;
+  color: #333;
 }
 
-.personal-info-container h2 {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 2rem;
+/* Headings */
+.application-form-container h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+  color: #222;
 }
 
-.personal-info-container h2 .icon {
-    margin-right: 0.5rem;
-    color: #555;
-    font-size: 1.7rem;
+.application-form-container p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
 }
 
-.form-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+section {
+  margin-bottom: 40px;
 }
 
-.form-group {
-    flex: 1;
-    min-width: 200px; /* Adjust based on your screen size */
-    display: flex;
-    flex-direction: column;
+section h4 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #2b6cb0;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
 }
 
-.form-group label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #555;
-    margin-bottom: 0.5rem;
+/* Form styling */
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
 
-.form-group label::after {
-    content: ''; /* No asterisk, handled in the component's JSX */
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  color: #333;
 }
 
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #f7f7f7;
-    font-size: 1rem;
-    color: #333;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+input,
+select {
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: #007bff; /* A nice blue for focus */
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
 }
 
-.form-group input::placeholder {
-    color: #a0a0a0;
+/* Radio buttons for Program Type */
+.program-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0 20px 0;
 }
 
-.form-group select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>');
-    background-repeat: no-repeat;
-    background-position: right 0.7rem top 50%;
-    background-size: 1.2rem;
-    cursor: pointer;
+.program-options label {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Specific styling for the date input icon */
-.form-group input[type="date"]::-webkit-calendar-picker-indicator {
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>') no-repeat center;
-    opacity: 0.7;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
+/* Responsive design */
+@media (max-width: 600px) {
+  .application-form-container {
+    padding: 20px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
 }
 
-.form-group input[type="date"]::-webkit-calendar-picker-indicator:hover {
-    opacity: 1;
-}
-
-.form-group input[type="text"][placeholder="mm/dd/yyyy"] {
-    position: relative;
-    padding-right: 2.5rem;
+/* Optional: make section spacing subtle */
+.personal-information-container,
+.address-information,
+.program-information {
+  padding: 15px 0;
+  border-top: 1px solid #e2e8f0;
 }

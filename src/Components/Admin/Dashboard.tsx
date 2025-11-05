@@ -1,6 +1,6 @@
-import "./DashboardCard.css";
-import DashboardCard from "./DashboardCard";
+import "./summaryCard.css";
 import Recent from "./RecentActivities";
+import DashboardCard from "./summaryCard";
 
 function Dashboard() {
   return (

@@ -1,4 +1,4 @@
-import './DashboardCard.css'
+import './summaryCard.css'
 
 function DashboardCard({ number, name }: { number: number; name: string }) {
     return ( 

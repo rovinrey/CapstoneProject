@@ -8,10 +8,11 @@ import Overview from "./TabsLInk/Overview";
 import Payment from "./TabsLInk/Payment";
 import Schedule from "./TabsLInk/Schedule";
 import Documents from "./TabsLInk/Documents";
-import Apply from "./TabsLInk/Apply";
 */
+import Apply from "./TabsLInk/Apply";
+
 import "./BeneficiaryDashboard.css";
-import Tabs from "./Tabs";
+//import Tabs from "./Tabs";
 import Header from "../../Layout/Header";
 
 function BeneficiaryDashboard() {
@@ -72,9 +73,11 @@ function BeneficiaryDashboard() {
           <p className="progress-text">You're 60% through your program</p>
         </div>
 
-        {/* Horizontal Tabs */}
+        {/* Horizontal Tabs 
         <Tabs />
-
+        */}
+        {/*application form*/}
+        <Apply />
        
       </div>
     </div>

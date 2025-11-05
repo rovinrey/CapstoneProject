@@ -1,57 +1,136 @@
-import './Apply.css'
-function ApplicationForm () {
-    return(
-        <>
-            <h3>Submit New Application</h3>
-            <p>Apply for additional TUPAD or Pangkabuhayan</p>
+import './Apply.css';
 
-            {/*Progress bar here*/}
-            <div className="personal-information-container">
-                <form>
-                    <label>First Name* <input type="text" /></label>
-                    <label>Last name*<input type="text" /></label>
-                    <label>Middle Name*<input type="text" /></label>
+function ApplicationForm() {
+  return (
+    <div className="application-form-container">
+      <h3>Submit New Application</h3>
+      <p>Apply for additional TUPAD or Pangkabuhayan</p>
 
-                    <label>Date of Birth*<input type="text" /></label>
-                    <label>Age*<input type="text" /></label>
-                    <label>Gender*<input type="text" /></label>
+      {/* Progress bar (add later) */}
 
-                    <label>Civil Status*<input type="text" /></label>
-                    <label>Contact number*<input type="text" /></label>
-                    <label>Email Address*<input type="text" /></label>
-                </form>
-            </div>
+      {/* Personal Information Section */}
+      <section className="personal-information-container">
+        <h4>Personal Information</h4>
+        <form>
+          <label>
+            First Name* 
+            <input type="text" name="firstName" required />
+          </label>
+          <label>
+            Last Name*
+            <input type="text" name="lastName" required />
+          </label>
+          <label>
+            Middle Name*
+            <input type="text" name="middleName" required />
+          </label>
 
-            <div className='Address-information'>
-                <form>
-                    <label>Home number/ unit* <input type="text" /></label>
-                    <label>Barangay* <input type="text" /></label>
-                    <label>Province* <input type="text" /></label>
+          <label>
+            Date of Birth*
+            <input type="date" name="dob" required />
+          </label>
+          <label>
+            Age*
+            <input type="number" name="age" required />
+          </label>
+          <label>
+            Gender*
+            <select name="gender" required>
+              <option value="">Select gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
 
-                    <label>Street* <input type="text" /></label>
-                    <label>Municipal/City* <input type="text" /></label>
-                    <label>Zip Code* <input type="text" /></label>
-                </form>
-            </div>
+          <label>
+            Civil Status*
+            <select name="civilStatus" required>
+              <option value="">Select status</option>
+              <option value="single">Single</option>
+              <option value="married">Married</option>
+              <option value="widowed">Widowed</option>
+              <option value="separated">Separated</option>
+            </select>
+          </label>
 
-            <div className='program-information'>
-                <p>Program type*</p>
-                <p>TUPAD Tulong Pangkabuhayan sa Ating Displaced/ Disadvantage Workers</p>
-                <p>Pangkabuhayan Livelihood Programs</p>
+          <label>
+            Contact Number*
+            <input type="tel" name="contact" required />
+          </label>
+          <label>
+            Email Address*
+            <input type="email" name="email" required />
+          </label>
+        </form>
+      </section>
 
-                <label>Availability*</label>
-                    <select>
-                        <option value={0}>Full timw</option>
-                        <option value={1}>Part time</option>
-                        <option value={2}>Weekends only </option>
-                        <option value={3}>Flexible Schedule</option>
-                    </select>
+      {/* Address Information Section */}
+      <section className="address-information">
+        <h4>Address Information</h4>
+        <form>
+          <label>
+            Home Number / Unit*
+            <input type="text" name="homeNumber" required />
+          </label>
+          <label>
+            Street*
+            <input type="text" name="street" required />
+          </label>
+          <label>
+            Barangay*
+            <input type="text" name="barangay" required />
+          </label>
+          <label>
+            Municipal / City*
+            <input type="text" name="city" required />
+          </label>
+          <label>
+            Province*
+            <input type="text" name="province" required />
+          </label>
+          <label>
+            Zip Code*
+            <input type="text" name="zip" required />
+          </label>
+        </form>
+      </section>
 
-                    <form>
-                        <label>relevant expercience <input type='text'/></label>
-                    </form>
-            </div>
-        </>
-    );
+      {/* Program Information Section */}
+      <section className="program-information">
+        <h4>Program Information</h4>
+        <div>
+          <p>Program Type*</p>
+          <div className="program-options">
+            <label>
+              <input type="radio" name="programType" value="tupad" required />
+              TUPAD – Tulong Pangkabuhayan sa Ating Displaced/Disadvantaged Workers
+            </label>
+            <label>
+              <input type="radio" name="programType" value="pangkabuhayan" required />
+              Pangkabuhayan – Livelihood Programs
+            </label>
+          </div>
+
+          <label>
+            Availability*
+            <select name="availability" required>
+              <option value="">Select availability</option>
+              <option value="fulltime">Full Time</option>
+              <option value="parttime">Part Time</option>
+              <option value="weekends">Weekends Only</option>
+              <option value="flexible">Flexible Schedule</option>
+            </select>
+          </label>
+
+          <label>
+            Relevant Experience
+            <input type="text" name="experience" />
+          </label>
+        </div>
+      </section>
+    </div>
+  );
 }
+
 export default ApplicationForm;

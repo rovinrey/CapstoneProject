@@ -12,7 +12,7 @@ import  { useState } from 'react';
 
 function Sidebar() {
   // 1. Define 'menu' state and 'setMenu' function
-  const [menu, setMenu] = useState("home"); 
+  const [menu, setMenu] = useState("dashboard"); 
 
   // Helper function to handle clicks and set the active menu
   const handleMenuClick = (menuName: any) => {
