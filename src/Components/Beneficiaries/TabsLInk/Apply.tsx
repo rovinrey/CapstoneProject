@@ -1,6 +1,12 @@
+//import { useState } from 'react';
 import './Apply.css';
 
 function ApplicationForm() {
+
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    alert("Application submitted!");
+  }
   return (
     <div className="application-form-container">
       <h3>Submit New Application</h3>
@@ -127,7 +133,9 @@ function ApplicationForm() {
             Relevant Experience
             <input type="text" name="experience" />
           </label>
+          <button type="submit" onClick={handleSubmit}>Submit</button>
         </div>
+        
       </section>
     </div>
   );

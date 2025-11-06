@@ -82,7 +82,18 @@ select:focus {
   align-items: center;
   gap: 8px;
 }
-
+button[type="submit"] {
+  grid-column: span 2;
+  padding: 12px 20px;
+  background-color: #3182ce;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 /* Responsive design */
 @media (max-width: 600px) {
   .application-form-container {
