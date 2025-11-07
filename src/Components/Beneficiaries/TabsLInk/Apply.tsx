@@ -35,10 +35,12 @@ function ApplicationForm() {
             Date of Birth*
             <input type="date" name="dob" required />
           </label>
+          {/*
           <label>
             Age*
             <input type="number" name="age" required />
           </label>
+          */}
           <label>
             Gender*
             <select name="gender" required>
@@ -134,8 +136,7 @@ function ApplicationForm() {
             <input type="text" name="experience" />
           </label>
           <button type="submit" onClick={handleSubmit}>Submit</button>
-        </div>
-        
+        </div>       
       </section>
     </div>
   );

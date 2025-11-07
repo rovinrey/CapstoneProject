@@ -1,5 +1,5 @@
 import './Programs.css' // css of this page
-import ProgramsCard from '../ProgramCard';
+import ProgramsCard from '../Admin/ProgramCard';
 function Programs() {
     return(
         <>

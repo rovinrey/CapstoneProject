@@ -34,20 +34,20 @@ function BeneficiaryDashboard() {
             <div className="card-icon">
                   <FaCheckCircle />
             </div>
-            <div className="card-content">
-                  <h3>Application ID</h3>
-                  <p>BEN001</p>
-            </div>
+              <div className="card-content">
+                    <h3>Application ID</h3>
+                    <p>BEN001</p>
+              </div>
           </div>
 
           <div className="card">
             <div className="card-icon">
                   <FaPesoSign />
             </div>
-            <div className="card-content">
-                  <h3>Total Earnings</h3>
-                  <p>₱15,750</p>
-            </div>
+              <div className="card-content">
+                    <h3>Total Earnings</h3>
+                    <p>₱2000</p>
+              </div>
           </div>
 
           <div className="card">

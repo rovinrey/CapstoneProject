@@ -1,14 +1,8 @@
 // Sidebar.js
 import './Sidebar.css';
-// Import the Link component for navigation
-import { Link } from 'react-router-dom';
-// Import useState to manage the active menu state
 import  { useState } from 'react';
-
-// The imported page components are not used directly in the JSX, 
-// so they can be removed unless you plan to use them here later.
-// (e.g., Dashboard, Beneficiaries, Programs, PaymentPage, Reports)
-
+import { Link } from 'react-router-dom';
+import signOutButton from '../Components/Buttons/signOutButton';
 
 function Sidebar() {
   // 1. Define 'menu' state and 'setMenu' function
@@ -74,6 +68,10 @@ function Sidebar() {
           </li>
         </ul>
       </nav>
+      {/* Sign Out Button */}
+      <div className="sign-out-section">
+        {signOutButton()}
+      </div>
     </div>
   );
 }

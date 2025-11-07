@@ -1,4 +1,4 @@
-import PaymentPageCard from "../PaymentPageCard";
+import PaymentPageCard from "../Admin/PaymentPageCard";
 function PaymentPage () {
     return(
         <>
