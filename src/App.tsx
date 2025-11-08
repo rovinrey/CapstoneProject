@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 // Admin UI components
 import Sidebar from './Layout/Sidebar';
-import LoginPage from './Components/Pages/LoginPage';
+import LoginPage from './Components/Admin/Pages/LoginPage';
 import Dashboard from './Components/Admin/Dashboard';
-import Beneficiaries from './Components/Pages/BeneficiariesPage';
-import Programs from './Components/Pages/Programs';
-import PaymentPage from './Components/Pages/PaymentPage';
-import Reports from './Components/Pages/Reports';
+import Beneficiaries from './Components/Admin/Pages/BeneficiariesPage';
+import Programs from './Components/Admin/Pages/Programs';
+import PaymentPage from './Components/Admin/Pages/PaymentPage';
+import Reports from './Components/Admin/Pages/Reports';
  
 // Beneficiary UI pages
 import BeneficiaryDashboard from './Components/Beneficiaries/BeneficiaryDashboard';

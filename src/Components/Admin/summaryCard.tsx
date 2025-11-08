@@ -1,13 +1,14 @@
 import './summaryCard.css'
 
-function DashboardCard({ number, name }: { number: number; name: string }) {
+function DashboardCard({ number, name , icon}: { number: number; name: string, icon?: React.ReactNode }) {
     return ( 
         
         <div className='container'>
             <div className='dashboard-card'>
-                 <p>{name}</p>
+                <p>{name}</p>
                 <h3>{number}</h3>
-                <img alt="" />           
+                <p>{icon}</p>
+                      
             </div>
         </div>
       

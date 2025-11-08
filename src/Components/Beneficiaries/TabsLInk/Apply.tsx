@@ -1,143 +1,298 @@
-//import { useState } from 'react';
+import { useState } from 'react';
 import './Apply.css';
 
-function ApplicationForm() {
+// Accept onCancel prop for closing the form/going back
+function ApplicationForm({ onCancel }) {
+ 
+ // State object to manage all form data
+ const [formData, setFormData] = useState({
+    programType: '',
+    availability: '',
+    experience: '',
+    firstName: '',
+    lastName: '',
+    middleName: '',
+    dob: '',
+    gender: '',
+    civilStatus: '',
+    contact: '',
+    homeNumber: '',
+    street: '',
+    barangay: '',
+    city: '',
+    province: '',
+    zip: '',
+ });
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
-    alert("Application submitted!");
-  }
-  return (
-    <div className="application-form-container">
-      <h3>Submit New Application</h3>
-      <p>Apply for additional TUPAD or Pangkabuhayan</p>
+// Unified change handler for all form fields
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const { name, value } = e.target;
+    setFormData(prevData => ({
+          ...prevData,
+        [name]: value
+    }));
+  };
 
-      {/* Progress bar (add later) */}
+// Handle form submission
+ const handleSubmit = (e: { preventDefault: () => void; }) => {
+ e.preventDefault();
+ console.log("Form Data Submitted:", formData);
+    // You would typically send this data to an API here.
+alert("Application submitted!");
+    
+    // Optionally call onCancel to close the form after submission
+    if (onCancel) {
+        onCancel();
+    }
+   }
+ 
+return (
+ <div className="application-form-container">
+ <h3>Submit New Application</h3>
+ <p>Apply for additional TUPAD or Pangkabuhayan</p>
 
-      {/* Personal Information Section */}
-      <section className="personal-information-container">
-        <h4>Personal Information</h4>
-        <form>
-          <label>
-            First Name* 
-            <input type="text" name="firstName" required />
-          </label>
-          <label>
-            Last Name*
-            <input type="text" name="lastName" required />
-          </label>
-          <label>
-            Middle Name*
-            <input type="text" name="middleName" required />
-          </label>
+ {/* 1. Wrap entire content in a single form */}
+ <form onSubmit={handleSubmit}>
 
-          <label>
-            Date of Birth*
-            <input type="date" name="dob" required />
-          </label>
-          {/*
-          <label>
-            Age*
-            <input type="number" name="age" required />
-          </label>
-          */}
-          <label>
-            Gender*
-            <select name="gender" required>
-              <option value="">Select gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-          </label>
+{/* Program Information Section */}
+ <section className="program-information">
+ <h4>Program Information</h4>
+ <div>
+ <p>Program Type*</p>
+ <div className="program-options">
+ <label htmlFor="programTypeTupad">
+   <input 
+                    type="radio" 
+                    id="programTypeTupad"
+                    name="programType" 
+                    value="tupad" 
+                    checked={formData.programType === 'tupad'}
+                    onChange={handleChange}
+                    required 
+                />
+ TUPAD - Tulong Pangkabuhayan sa Ating Displaced/Disadvantaged Workers
+</label>
+<label htmlFor="programTypePangkabuhayan">
+ <input 
+                    type="radio" 
+                    id="programTypePangkabuhayan"
+                    name="programType" 
+                    value="pangkabuhayan" 
+                    checked={formData.programType === 'pangkabuhayan'}
+                    onChange={handleChange}
+                    required 
+                />
+ Pangkabuhayan – Livelihood Programs
+ </label>
+ </div>
 
-          <label>
-            Civil Status*
-            <select name="civilStatus" required>
-              <option value="">Select status</option>
-              <option value="single">Single</option>
-              <option value="married">Married</option>
-              <option value="widowed">Widowed</option>
-              <option value="separated">Separated</option>
-            </select>
-          </label>
+ <label htmlFor="availabilitySelect">
+ Availability*
+ <select 
+                id="availabilitySelect"
+                name="availability" 
+                value={formData.availability}
+                onChange={handleChange}
+                required
+            >
+ <option value="">Select availability</option>
+ <option value="fulltime">Full Time</option>
+ <option value="parttime">Part Time</option>
+ <option value="weekends">Weekends Only</option>
+<option value="flexible">Flexible Schedule</option>
+ </select>
+</label>
 
-          <label>
-            Contact Number*
-            <input type="tel" name="contact" required />
-          </label>
-          <label>
-            Email Address*
-            <input type="email" name="email" required />
-          </label>
-        </form>
-      </section>
+<label htmlFor="experienceInput">
+ Relevant Experience
+ <input 
+                type="text" 
+                id="experienceInput"
+                name="experience" 
+                value={formData.experience}
+                onChange={handleChange}
+            />
+ </label>
+ </div> 
+ </section>
 
-      {/* Address Information Section */}
-      <section className="address-information">
-        <h4>Address Information</h4>
-        <form>
-          <label>
-            Home Number / Unit*
-            <input type="text" name="homeNumber" required />
-          </label>
-          <label>
-            Street*
-            <input type="text" name="street" required />
-          </label>
-          <label>
-            Barangay*
-            <input type="text" name="barangay" required />
-          </label>
-          <label>
-            Municipal / City*
-            <input type="text" name="city" required />
-          </label>
-          <label>
-            Province*
-            <input type="text" name="province" required />
-          </label>
-          <label>
-            Zip Code*
-            <input type="text" name="zip" required />
-          </label>
-        </form>
-      </section>
+{/* Personal Information Section */}
+ <section className="personal-information-container">
+ <h4>Personal Information</h4>
+ {/* Removed redundant <form> tag */}
+ <label htmlFor="firstNameInput">
+First Name*<input 
+                type="text" 
+                id="firstNameInput"
+                name="firstName" 
+                value={formData.firstName}
+                onChange={handleChange}
+                required 
+            />
+ </label>
+ <label htmlFor="lastNameInput">
+ Last Name*
+ <input 
+                type="text" 
+                id="lastNameInput"
+                name="lastName" 
+                value={formData.lastName}
+                onChange={handleChange}
+                required 
+            />
+ </label>
+ <label htmlFor="middleNameInput">
+ Middle Name*
+<input 
+                type="text" 
+                id="middleNameInput"
+                name="middleName" 
+                value={formData.middleName}
+                onChange={handleChange}
+                required 
+            />
+ </label>
 
-      {/* Program Information Section */}
-      <section className="program-information">
-        <h4>Program Information</h4>
-        <div>
-          <p>Program Type*</p>
-          <div className="program-options">
-            <label>
-              <input type="radio" name="programType" value="tupad" required />
-              TUPAD – Tulong Pangkabuhayan sa Ating Displaced/Disadvantaged Workers
-            </label>
-            <label>
-              <input type="radio" name="programType" value="pangkabuhayan" required />
-              Pangkabuhayan – Livelihood Programs
-            </label>
-          </div>
+ <label htmlFor="dobInput">
+ Date of Birth*
+ <input 
+                type="date" 
+                id="dobInput"
+                name="dob" 
+                value={formData.dob}
+                onChange={handleChange}
+                required 
+            />
+ </label>
+ <label htmlFor="genderSelect">
+ Gender*
+<select 
+                id="genderSelect"
+                name="gender" 
+                value={formData.gender}
+                onChange={handleChange}
+                required
+            >
+              <option value="">Select gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
 
-          <label>
-            Availability*
-            <select name="availability" required>
-              <option value="">Select availability</option>
-              <option value="fulltime">Full Time</option>
-              <option value="parttime">Part Time</option>
-              <option value="weekends">Weekends Only</option>
-              <option value="flexible">Flexible Schedule</option>
-            </select>
-          </label>
+          <label htmlFor="civilStatusSelect">
+            Civil Status*
+            <select 
+                id="civilStatusSelect"
+                name="civilStatus" 
+                value={formData.civilStatus}
+                onChange={handleChange}
+                required
+            >
+              <option value="">Select status</option>
+              <option value="single">Single</option>
+              <option value="married">Married</option>
+              <option value="widowed">Widowed</option>
+              <option value="separated">Separated</option>
+            </select>
+          </label>
 
-          <label>
-            Relevant Experience
-            <input type="text" name="experience" />
-          </label>
-          <button type="submit" onClick={handleSubmit}>Submit</button>
-        </div>       
-      </section>
+          <label htmlFor="contactInput">
+            Contact Number*
+            <input 
+                type="tel" 
+                id="contactInput"
+                name="contact" 
+                value={formData.contact}
+                onChange={handleChange}
+                required 
+            />
+          </label>
+        </section>
+        
+        {/* Address Information Section */}
+        <section className="address-information">
+          <h4>Address Information</h4>
+          {/* Removed redundant <form> tag */}
+          <label htmlFor="homeNumberInput">
+            Home Number / Unit*
+            <input 
+                type="text" 
+                id="homeNumberInput"
+                name="homeNumber" 
+                value={formData.homeNumber}
+                onChange={handleChange}
+                required 
+            />
+          </label>
+          <label htmlFor="streetInput">
+            Street*
+            <input 
+                type="text" 
+                id="streetInput"
+                name="street" 
+                value={formData.street}
+                onChange={handleChange}
+                required 
+            />
+          </label>
+          <label htmlFor="barangayInput">
+            Barangay*
+            <input 
+                type="text" 
+                id="barangayInput"
+                name="barangay" 
+                value={formData.barangay}
+                onChange={handleChange}
+                required 
+            />
+          </label>
+          <label htmlFor="cityInput">
+            Municipal / City*
+            <input 
+                type="text" 
+                id="cityInput"
+                name="city" 
+                value={formData.city}
+                onChange={handleChange}
+                required 
+            />
+          </label>
+          <label htmlFor="provinceInput">
+            Province*
+            <input 
+                type="text" 
+                id="provinceInput"
+                name="province" 
+                value={formData.province}
+                onChange={handleChange}
+                required 
+            />
+          </label>
+          <label htmlFor="zipInput">
+            Zip Code*
+            <input 
+                type="text" 
+                id="zipInput"
+                name="zip" 
+                value={formData.zip}
+                onChange={handleChange}
+                required 
+            />
+          </label>
+          
+          {/* Submit and Cancel Buttons */}
+          <div className="form-actions">
+                <button type="submit" className="submit-button">Submit Application</button>
+                {/* Cancel button uses the passed onCancel prop */}
+                {onCancel && (
+                    <button type="button" onClick={onCancel} className="cancel-button">
+                        Cancel
+                    </button>
+                )}
+            </div>
+          </section> 
+      </form>
     </div>
   );
 }

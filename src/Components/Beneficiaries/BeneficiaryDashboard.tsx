@@ -20,7 +20,9 @@ function BeneficiaryDashboard() {
     <div>
       <Header />
       <div className="dashboard-container">
+
         {/* Welcome Banner */}
+
         <div className="welcome-banner">
               <h2>Welcome back, Maria!</h2>
               <p>Here's your program dashboard and latest updates</p>
@@ -36,7 +38,7 @@ function BeneficiaryDashboard() {
             </div>
               <div className="card-content">
                     <h3>Application ID</h3>
-                    <p>BEN001</p>
+                    <p>BEN001</p> {/*beneficiary ID for unique indentification*/}
               </div>
           </div>
 
@@ -46,7 +48,7 @@ function BeneficiaryDashboard() {
             </div>
               <div className="card-content">
                     <h3>Total Earnings</h3>
-                    <p>₱2000</p>
+                    <p>₱2000</p> {/*amount earn in the program*/}
               </div>
           </div>
 
@@ -56,26 +58,30 @@ function BeneficiaryDashboard() {
             </div>
             <div className="card-content">
                   <h3>Program</h3>
-                  <p>TUPAD - Community Cleaning</p>
+                  <p>TUPAD - Community Cleaning</p> {/* program type*/}
             </div>
           </div>
         </div>
-
-        {/* Program Progress */}
+ 
+        {/*
+        
         <div className="program-progress">
           <div className="program-progress-header">
                   <h3>Program Progress</h3>
                   <span>Step 3 of 5</span>
-          </div>  
+          </div> 
+
+         progress bar sample
           <div className="progress-bar-container">
             <div className="progress-bar"></div>
+            </div>
+              <p className="progress-text">You're 60% through your program</p>
           </div>
-          <p className="progress-text">You're 60% through your program</p>
-        </div>
+        */} 
 
-        {/* Horizontal Tabs 
-        <Tabs />
-        */}
+                        {/* Horizontal Tabs 
+                        <Tabs />
+                        */}
         {/*application form*/}
         <Apply />
        

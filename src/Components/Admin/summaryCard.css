@@ -1,8 +1,10 @@
 .dashboard-card {
-    background-color: rgb(244, 244, 244);
-    width: 230px;
-    height: 130px;
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    height: 150px;
     border-radius: 10px;
+    border: 2px solid;
+    border-color: rgb(227, 227, 227);
 }
 .dashboard-card h3 {
     font-size: 40px;
@@ -10,10 +12,9 @@
 .dashboard-card-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     margin-top: 20px;   
     gap: 20px;
-    padding: 10px;
+    margin-bottom: 20px;
 
 
 }

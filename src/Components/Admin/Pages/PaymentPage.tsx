@@ -1,4 +1,7 @@
-import PaymentPageCard from "../Admin/PaymentPageCard";
+import Summarycard from '../summaryCard';
+
+import { FaPeopleGroup } from 'react-icons/fa6';
+
 function PaymentPage () {
     return(
         <>
@@ -7,21 +10,10 @@ function PaymentPage () {
             <p>Monitor and Manage beneficiary payments</p>
         </div>
         <div className="payment-card">
-            <PaymentPageCard 
-                name={"Total Disbured"} 
-                amount={18795} 
-            />
-            <PaymentPageCard
-                name={"Pending Payment"} 
-                amount={1200} 
-            />
-            <PaymentPageCard 
-                name={"Completed this month"} 
-                amount={0} 
-            />
-            <PaymentPageCard 
-                name={"Pending Count"} 
-                amount={0} 
+            <Summarycard 
+                number={0} 
+                name="Total Beneficiaries" 
+                icon={<FaPeopleGroup />}
             />
         </div>
         <table>

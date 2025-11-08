@@ -1,4 +1,4 @@
-import DashboardCard from "../Admin/summaryCard";
+import DashboardCard from "../summaryCard";
 function Reports () {
     return(
         <>
