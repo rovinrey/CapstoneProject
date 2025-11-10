@@ -1,0 +1,35 @@
+.welcome-banner {
+  background-color: #d1fae5; /* Light green background */
+  border-left: 6px solid #047857; /* Dark green left border */
+  color: #065f46; /* Dark green text */
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.welcome-banner h2 {
+  font-size: 1.5rem; /* Large welcome text */
+  font-weight: 600;
+  margin: 0;
+}
+
+.welcome-banner p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.status-badge {
+  display: inline-block;
+  background-color: #10b981; /* Green color for 'active' */
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 5px; /* Spacing below the text */
+  width: 50px;
+  text-align: center;
+} 

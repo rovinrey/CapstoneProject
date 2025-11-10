@@ -4,6 +4,7 @@ import Apply from '../../Beneficiaries/TabsLInk/Apply'
 
  // Simple data for demonstration (will be dynamic later)
     const beneficiariesData = [
+        
         {
             id: 'BEN001',
             name: 'maria santos',
@@ -23,6 +24,7 @@ import Apply from '../../Beneficiaries/TabsLInk/Apply'
             totalEarning: 'P1000',
             actions: 'Active'
         }
+            
     ];
 
 function Beneficiaries() {
@@ -60,16 +62,15 @@ function Beneficiaries() {
                 </div>
             </div>
 
-            <input className="Search" type="text" placeholder="search beneficiaries"></input>
+           
 
             {/* Content Area - Conditional Rendering */}
             
             {/* Show the Beneficiary List */}
             {tableContent === 'list' && (
                 <>
-                   
-
                     <table>
+                         <input className="Search" type="text" placeholder="search beneficiaries"></input>
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -81,17 +82,18 @@ function Beneficiaries() {
                                 <th>Actions</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             {/* Map through data to render rows */}
-                            {beneficiariesData.map((b) => (
-                                <tr key={b.id}>
-                                    <td>{b.id}</td>
-                                    <td>{b.name}</td>
-                                    <td>{b.program}</td>
-                                    <td>{b.status}</td>
-                                    <td>{b.dateApplied}</td>
-                                    <td>{b.totalEarning}</td>
-                                    <td>{b.actions}</td>
+                            {beneficiariesData.map((beneficiary) => (
+                                <tr key={beneficiary.id}>
+                                    <td>{beneficiary.id}</td>
+                                    <td>{beneficiary.name}</td>
+                                    <td>{beneficiary.program}</td>
+                                    <td>{beneficiary.status}</td>
+                                    <td>{beneficiary.dateApplied}</td>
+                                    <td>{beneficiary.totalEarning}</td>
+                                    <td>{beneficiary.actions}</td>
                                 </tr> 
                             ))}
                         </tbody>

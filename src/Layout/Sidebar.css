@@ -33,12 +33,6 @@
     margin-bottom: 10px;
 }
 
-.sidebar-header h1 {
-    font-size: 1.4rem;
-    color: #333;
-    margin-bottom: 2px;
-}
-
 .sidebar-header .subtitle {
     font-size: 0.9rem;
     color: #555;
@@ -126,4 +120,7 @@ li.active a {
 .main-content {
     margin-left: 260px; /* IMPORTANT: Must match the sidebar width */
     padding: 20px;
+}
+.sign-out-section {
+    justify-content: baseline;
 }
