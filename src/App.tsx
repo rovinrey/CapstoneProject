@@ -55,7 +55,7 @@ function App() {
               <Route path="/payment" element={<Payments />} />
               <Route path="/schedule" element={<Schedule />} />
               <Route path="/documents" element={<Documents />} />
-              <Route path="/apply" element={<Apply />} />
+              <Route path="/apply" element={<Apply onCancel={undefined} />} />
       </Routes>
     </Router>
   );

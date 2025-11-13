@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './LoginPage.css'
 
+//import SignUpPage from "./SignUpPage";
+
+
 //import { BeneficiaryDashboard } from '../../Beneficiaries/BeneficiaryDashboard'
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -47,6 +50,9 @@ export default function Login() {
         <button type="submit" className="login-btn">
           Login
         </button>
+
+        <p>Don't have an account? signup</p>
+
       </form>
     </div>
   );

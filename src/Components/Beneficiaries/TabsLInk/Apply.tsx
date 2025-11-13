@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import './Apply.css';
-import { data } from 'react-router-dom';
 
-// Accept onCancel prop for closing the form/going back
-function ApplicationForm({ onCancel }) {
+// Define the type for the event handler for clarity/error fixing
+interface ChangeEvent {
+    target: {
+        name: string;
+        value: any;
+    };
+}
 
+// Accept onCancel AND a new onSave prop for handling data submission
+function ApplicationForm({ onCancel, onSubmitData }: { onCancel: () => void, onSubmitData: (data: any) => void }) { 
     // State object to manage all form data
     const [formData, setFormData] = useState({
         programType: '',
@@ -14,6 +20,7 @@ function ApplicationForm({ onCancel }) {
         lastName: '',
         middleName: '',
         dob: '',
+        age: '',
         gender: '',
         civilStatus: '',
         contact: '',
@@ -23,11 +30,10 @@ function ApplicationForm({ onCancel }) {
         city: '',
         province: '',
         zip: '',
-
     });
-    // Unified change handler for all form fields
-    const handleChange = (e: { target: { name: any; value: any; }; }) => {
 
+    // Unified change handler for all form fields
+    const handleChange = (e: ChangeEvent) => { // Use the defined interface here
         const { name, value } = e.target;
         setFormData(prevData => ({
             ...prevData,
@@ -36,17 +42,18 @@ function ApplicationForm({ onCancel }) {
     };
 
     // Handle form submission
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        
+        // 1. Call the prop function and pass the final form data object
+        onSubmitData(formData); 
+        
         console.log("Form Data Submitted:", formData);
-        // You would typically send this data to an API here.
-        alert("Application submitted!");
+        
+        // Optional: Clear the form state after successful submission
+        // setFormData({ /* initial empty state here */ });
 
-        //if (handleSubmit === true) {
-          //  data.map
-        //}
-
-        // Optionally call onCancel to close the form after submission
+        // Call onCancel to close the form after successful submission
         if (onCancel) {
             onCancel();
         }
@@ -57,15 +64,14 @@ function ApplicationForm({ onCancel }) {
             <h3>Submit New Application</h3>
             <p>Apply for additional TUPAD or Pangkabuhayan</p>
 
-            {/* 1. Wrap entire content in a single form */}
             <form onSubmit={handleSubmit}>
-
-                {/* Program Information Section */}
+                {/* ... (Program Information Section) ... */}
                 <section className="program-information">
                     <h4>Program Information</h4>
                     <div>
                         <p>Program Type*</p>
                         <div className="program-options">
+                            {/* TUPAD */}
                             <label htmlFor="programTypeTupad">
                                 <input
                                     type="radio"
@@ -78,6 +84,7 @@ function ApplicationForm({ onCancel }) {
                                 />
                                 TUPAD - Tulong Pangkabuhayan sa Ating Displaced/Disadvantaged Workers
                             </label>
+                            {/* Pangkabuhayan */}
                             <label htmlFor="programTypePangkabuhayan">
                                 <input
                                     type="radio"
@@ -91,11 +98,9 @@ function ApplicationForm({ onCancel }) {
                                 Pangkabuhayan - Livelihood Programs
                             </label>
                         </div>
-
-                        {/* availability */}
+                        {/* Availability */}
                         <label htmlFor="availabilitySelect">
-                            Availability*   
-                            <select
+                            Availability* <select
                                 id="availabilitySelect"
                                 name="availability"
                                 value={formData.availability}
@@ -109,8 +114,7 @@ function ApplicationForm({ onCancel }) {
                                 <option value="flexible">Flexible Schedule</option>
                             </select>
                         </label>
-
-                        {/*relevant expercience*/}
+                        {/* Relevant Experience */}
                         <label htmlFor="experienceInput">
                             Relevant Experience
                             <input
@@ -123,11 +127,10 @@ function ApplicationForm({ onCancel }) {
                         </label>
                     </div>
                 </section>
-
-                {/* Personal Information Section */}
+                
+                {/* ... (Personal Information Section) ... */}
                 <section className="personal-information-container">
                     <h4>Personal Information</h4>
-                    {/* Removed redundant <form> tag */}
                     <label htmlFor="firstNameInput">
                         First Name*<input
                             type="text"
@@ -160,7 +163,6 @@ function ApplicationForm({ onCancel }) {
                             required
                         />
                     </label>
-
                     <label htmlFor="dobInput">
                         Date of Birth*
                         <input
@@ -168,6 +170,17 @@ function ApplicationForm({ onCancel }) {
                             id="dobInput"
                             name="dob"
                             value={formData.dob}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    <label htmlFor="age">
+                        Age*
+                        <input
+                            type="text"
+                            id="AgeInput"
+                            name="age"
+                            value={formData.age}
                             onChange={handleChange}
                             required
                         />
@@ -187,7 +200,6 @@ function ApplicationForm({ onCancel }) {
                             <option value="other">Other</option>
                         </select>
                     </label>
-
                     <label htmlFor="civilStatusSelect">
                         Civil Status*
                         <select
@@ -204,7 +216,6 @@ function ApplicationForm({ onCancel }) {
                             <option value="separated">Separated</option>
                         </select>
                     </label>
-
                     <label htmlFor="contactInput">
                         Contact Number*
                         <input
@@ -218,10 +229,9 @@ function ApplicationForm({ onCancel }) {
                     </label>
                 </section>
 
-                {/* Address Information Section */}
+                {/* ... (Address Information Section) ... */}
                 <section className="address-information">
                     <h4>Address Information</h4>
-                    {/* Removed redundant <form> tag */}
                     <label htmlFor="homeNumberInput">
                         Home Number / Unit*
                         <input
