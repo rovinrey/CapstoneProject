@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './Apply.css';
 
-// Define the type for the event handler for clarity/error fixing
 interface ChangeEvent {
     target: {
         name: string;

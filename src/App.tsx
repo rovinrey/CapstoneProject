@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // Admin UI components
 import Sidebar from './Layout/Sidebar';
@@ -9,39 +9,35 @@ import Beneficiaries from './Components/Admin/Pages/BeneficiariesPage';
 import Programs from './Components/Admin/Pages/Programs';
 import PaymentPage from './Components/Admin/Pages/PaymentPage';
 import Reports from './Components/Admin/Pages/Reports';
- 
+import SignUpPage from './Components/Admin/Pages/SignUpPage';
+
 // Beneficiary UI pages
 import BeneficiaryDashboard from './Components/Beneficiaries/BeneficiaryDashboard';
 
-//tabs links
-import Overview from './Components/Beneficiaries/TabsLInk/Overview';
-import Payments from './Components/Beneficiaries/TabsLInk/Payment';
-import Schedule from './Components/Beneficiaries/TabsLInk/Schedule';
-import Documents from './Components/Beneficiaries/TabsLInk/Documents';
-import Apply from './Components/Beneficiaries/TabsLInk/Apply';
-
 function App() {
   return (
-    <Router>
-     
+    <BrowserRouter>
       <Routes>
-        {/* Public route */}
-        <Route path="/" element={<LoginPage />} />
+        {/* Redirect root (/) to login */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
 
-        {/* Admin routes  */}
+        {/* Public routes */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
 
+        {/* Admin routes */}
         <Route
           path="/dashboard/*"
           element={
-            < div className="app-container">
-                <Sidebar />
+            <div className="app-container">
+              <Sidebar />
               <div className="main-content">
                 <Routes>
-                      <Route path="/" element={<Dashboard />} />
-                      <Route path="/Beneficiaries" element={<Beneficiaries />} />
-                      <Route path="/Programs" element={<Programs />} />
-                      <Route path="/Payment" element={<PaymentPage />} />
-                      <Route path="/Reports" element={<Reports />} />
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/Beneficiaries" element={<Beneficiaries />} />
+                  <Route path="/Programs" element={<Programs />} />
+                  <Route path="/Payment" element={<PaymentPage />} />
+                  <Route path="/Reports" element={<Reports />} />
                 </Routes>
               </div>
             </div>
@@ -50,14 +46,8 @@ function App() {
 
         {/* Beneficiary UI */}
         <Route path="/beneficiarydashboard" element={<BeneficiaryDashboard />} />
-        {/*tabs route */}
-              <Route path="/overview" element={<Overview />} />
-              <Route path="/payment" element={<Payments />} />
-              <Route path="/schedule" element={<Schedule />} />
-              <Route path="/documents" element={<Documents />} />
-              <Route path="/apply" element={<Apply onCancel={undefined} />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

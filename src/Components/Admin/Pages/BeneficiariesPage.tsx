@@ -52,7 +52,7 @@ function BeneficiariesList() {
     const handleAddBeneficiary = (formData: FormData) => {
         // Extract values from formData
         const { firstName, lastName, dob, barangay, programType, sex, civilStatus, address, idNumber, contactNumber } = formData;
-        
+
         // Calculate age from Date of Birth (dob)
         const calculateAge = (dob: string) => {
             const birthDate = new Date(dob);
@@ -69,12 +69,12 @@ function BeneficiariesList() {
         // Generate a new ID based on the current list length
         const newIdNumber = beneficiaries.length + 1;
         const newId = `BEN${String(newIdNumber).padStart(3, '0')}`;
-        
+
         // Determine the program title
-        const programTitle = programType === 'tupad' 
-                             ? 'TUPAD - Community Work' 
-                             : 'Pangkabuhayan - Livelihood';
-      
+        const programTitle = programType === 'tupad'
+            ? 'TUPAD - Community Work'
+            : 'Pangkabuhayan - Livelihood';
+
         const newBeneficiary: Beneficiary = {
             id: newId,
             name: `${firstName} ${lastName}`, // Combine first and last name
@@ -135,13 +135,13 @@ function BeneficiariesList() {
                     ) : (
                         <>
                             {/* Move search input outside the table for valid HTML */}
-                         
+
 
                             {/* Display the table if data exists */}
                             <table>
                                 {/* Header of the table */}
                                 <input className="Search" type="text" placeholder="search beneficiaries"></input>
-                                
+
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -151,7 +151,6 @@ function BeneficiariesList() {
                                         <th>Sex</th>
                                         <th>Civil Status</th>
                                         <th>Address</th>
-                                        <th>ID number</th>
                                         <th>Contact number</th>
                                         <th>Program</th>
                                         <th>Date applied</th>
@@ -163,11 +162,10 @@ function BeneficiariesList() {
                                             <td>{beneficiary.id}</td>
                                             <td>{beneficiary.firstName} {beneficiary.lastName}</td> {/* Full name */}
                                             <td>{beneficiary.age}</td>
-                                            <td>{beneficiary.dob}</td> {/* Birthday */}
+                                            <td>{beneficiary.dob}</td>
                                             <td>{beneficiary.sex}</td>
                                             <td>{beneficiary.civilStatus}</td>
                                             <td>{beneficiary.address}</td>
-                                            <td>{beneficiary.idNumber}</td>
                                             <td>{beneficiary.contactNumber}</td>
                                             <td>{beneficiary.program}</td>
                                             <td>{beneficiary.dateApplied}</td>

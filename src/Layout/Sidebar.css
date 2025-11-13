@@ -122,5 +122,7 @@ li.active a {
     padding: 20px;
 }
 .sign-out-section {
-    justify-content: baseline;
+    display: flex;
+    justify-content: last baseline;
+    margin-top: 350px;
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import './LoginPage.css'
+import SignUpPage from "./SignUpPage";
 
 //import SignUpPage from "./SignUpPage";
 
@@ -51,7 +52,9 @@ export default function Login() {
           Login
         </button>
 
-        <p>Don't have an account? signup</p>
+        <p 
+        style={{padding: '10px'}}
+        >Don't have an account? </p> <Link to={"/SignUpPage"}  {...SignUpPage} ></Link>
 
       </form>
     </div>

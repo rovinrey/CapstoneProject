@@ -51,6 +51,7 @@ function Sidebar() {
             {menu === "programs"}
           </li>
 
+          {/*
           <li
             onClick={() => handleMenuClick("payment")}
             className={menu === "payment" ? "active" : ""}
@@ -58,6 +59,7 @@ function Sidebar() {
             <Link to="/dashboard/Payment">Payment</Link>
             {menu === "payment"}
           </li>
+          */}
 
           <li
             onClick={() => handleMenuClick("reports")}

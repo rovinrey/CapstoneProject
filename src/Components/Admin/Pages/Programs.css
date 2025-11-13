@@ -2,11 +2,12 @@
 .program-card {
     width: 300px;
     height: 300px;
-    background-color: rgb(244, 244, 244);
     border-radius: 10px;
     margin-right: 20px;
     margin-top: 20px;
     padding: 20px;
+    border: 2px solid;
+    border-color: rgb(228, 228, 228);
 }
 .program-list {
     display: flex;
@@ -15,7 +16,8 @@
 .search-program {
     width: 300px;
     height: 30px;
-    border-radius: 5px;
-    background-color: rgb(227, 227, 227);
     margin-top: 20px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: rgb(228, 228, 228);
 }

@@ -2,33 +2,24 @@ import "./summaryCard.css";
 import Recent from "./RecentActivities";
 import DashboardCard from "./summaryCard";
 
-import { FaPeopleGroup } from "react-icons/fa6";
-
 function Dashboard() {
   return (
     <div>
-        <div>
-            <h2>Dashboard</h2>
-            <p>Overview of TUPAD and Pangkabuhayan programs</p>
-            
-        </div>
+      <div>
+        <h2>Dashboard</h2>
+        <p>Overview of TUPAD and Pangkabuhayan programs</p>
+      </div>
 
-        <div className="dashboard-card-container">
-            <DashboardCard 
-                number={0} 
-                name="Total Beneficiaries" 
-                icon={<FaPeopleGroup />}
-                
-            />
-            <DashboardCard number={0} name="Active Programs" />
-            <DashboardCard number={0} name="Total Distributed" />
-            <DashboardCard number={0} name="Employment Rate" />
-        </div>
+      <div className="dashboard-card-container">
+        <DashboardCard number={0} name="Total Beneficiaries" />
+        <DashboardCard number={0} name="Active Programs" />
+        <DashboardCard number={0} name="Total Distributed" />
+        <DashboardCard number={0} name="Employment Rate" />
+      </div>
 
-        <div className="recent-activity">
-            <Recent />
-        </div>
-        
+      <div className="recent-activity">
+        <Recent />
+      </div>
     </div>
   );
 }

@@ -14,17 +14,17 @@ import Apply from "./TabsLInk/Apply";
 import "./BeneficiaryDashboard.css";
 //import Tabs from "./Tabs";
 import Header from "../../Layout/Header";
-import welcomeBanner from "../../Layout/welcomeBackBanner";
+
 
 function BeneficiaryDashboard() {
   return (
     <div>
       <Header />
-      <welcomeBanner />
+
       <div className="dashboard-container">
 
 
-        {/* Summary Cards */}
+        {/* Summary Cards 
         <div className="summary-cards">
           <div className="card">
             <div className="card-icon">
@@ -32,7 +32,7 @@ function BeneficiaryDashboard() {
             </div>
             <div className="card-content">
               <h3>Application ID</h3>
-              <p>BEN001</p> {/*beneficiary ID for unique indentification*/}
+              <p>BEN001</p>
             </div>
           </div>
 
@@ -42,7 +42,7 @@ function BeneficiaryDashboard() {
             </div>
             <div className="card-content">
               <h3>Total Earnings</h3>
-              <p>₱2000</p> {/*amount earn in the program*/}
+              <p>₱2000</p>
             </div>
           </div>
 
@@ -52,11 +52,11 @@ function BeneficiaryDashboard() {
             </div>
             <div className="card-content">
               <h3>Program</h3>
-              <p>TUPAD - Community Cleaning</p> {/* program type*/}
+              <p>TUPAD - Community Cleaning</p>
             </div>
           </div>
         </div>
-
+          */}
         {/*
         
         <div className="program-progress">
@@ -77,7 +77,11 @@ function BeneficiaryDashboard() {
                         <Tabs />
                         */}
         {/*application form*/}
-        <Apply />
+        <Apply onCancel={function (): void {
+          throw new Error("Function not implemented.");
+        }} onSubmitData={function (data: any): void {
+          throw new Error("Function not implemented.");
+        }} />
 
       </div>
     </div>
