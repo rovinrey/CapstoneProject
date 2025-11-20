@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import './LoginPage.css'
-import SignUpPage from "./SignUpPage";
 
 //import SignUpPage from "./SignUpPage";
 
@@ -18,7 +17,7 @@ export default function Login() {
     if (username === "admin" && password === "admin123") {
       navigate("/Dashboard");
     } else if (username === "beneficiary" && password === "pass123") {
-      navigate("/BeneficiaryDashboard") ;
+      navigate("/BeneficiaryDashboard");
     } else {
       alert("Invalid credentials!");
     }
@@ -26,17 +25,17 @@ export default function Login() {
 
   return (
     <div className="login-container">
-      <h1>TUPAD and Pangkabuhayan <br/>Management System</h1>
+      <h1>TUPAD and Pangkabuhayan <br />Management System</h1>
       <form onSubmit={handleLogin} className="login-box">
         <h2 className="login-title">Login</h2>
 
         <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="login-input"
-            required
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="login-input"
+          required
         />
 
         <input
@@ -52,9 +51,10 @@ export default function Login() {
           Login
         </button>
 
-        <p 
-        style={{padding: '10px'}}
-        >Don't have an account? </p> <Link to={"/SignUpPage"}  {...SignUpPage} ></Link>
+        <p
+          style={{ padding: '10px' }}
+        >Don't have an account? </p> <Link
+          style={{ textDecoration: 'none' }} to={"/signup"}>signup</Link>
 
       </form>
     </div>

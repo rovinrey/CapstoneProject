@@ -3,15 +3,17 @@
     width: 300px;
     height: 300px;
     border-radius: 10px;
-    margin-right: 20px;
     margin-top: 20px;
     padding: 20px;
     border: 2px solid;
     border-color: rgb(228, 228, 228);
+  
 }
 .program-list {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    
 }
 .search-program {
     width: 300px;

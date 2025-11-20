@@ -7,8 +7,9 @@
     border-color: rgb(227, 227, 227);
     padding: 10px;
 }
-.dashboard-card h3 {
+.dashboard-card h4 {
     font-size: 40px;
+    font-weight: lighter;
 }
 .dashboard-card-container {
     display: flex;

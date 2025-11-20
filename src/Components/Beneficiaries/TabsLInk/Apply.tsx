@@ -44,15 +44,10 @@ function ApplicationForm({ onCancel, onSubmitData }: { onCancel: () => void, onS
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         
-        // 1. Call the prop function and pass the final form data object
         onSubmitData(formData); 
         
         console.log("Form Data Submitted:", formData);
         
-        // Optional: Clear the form state after successful submission
-        // setFormData({ /* initial empty state here */ });
-
-        // Call onCancel to close the form after successful submission
         if (onCancel) {
             onCancel();
         }

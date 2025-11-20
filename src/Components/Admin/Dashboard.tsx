@@ -12,7 +12,7 @@ function Dashboard() {
 
       <div className="dashboard-card-container">
         <DashboardCard number={0} name="Total Beneficiaries" />
-        <DashboardCard number={0} name="Active Programs" />
+        <DashboardCard number={2} name="Active Programs" />
         <DashboardCard number={0} name="Total Distributed" />
         <DashboardCard number={0} name="Employment Rate" />
       </div>

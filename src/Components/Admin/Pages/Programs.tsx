@@ -35,6 +35,40 @@ function Programs() {
                     Coordinator={'Maria Rodriguez'}
                     Location={'Juban Sorsogon'}
                 />
+                 <ProgramsCard
+                    name={'GIP'}
+                    status={'active'}
+                    ProjectName={'Community Cleaning Initiative'}
+                    Desc={'Street cleaning and beautification program for urban areas'}
+                    BeneficiaryNum={10}
+                    DateRange={0}
+                    Amount={0}
+                    Coordinator={'Maria Rodriguez'}
+                    Location={'Juban Sorsogon'}
+                />
+                 <ProgramsCard
+                    name={'SPES'}
+                    status={'active'}
+                    ProjectName={'Community Cleaning Initiative'}
+                    Desc={'Street cleaning and beautification program for urban areas'}
+                    BeneficiaryNum={45 / 60}
+                    DateRange={0}
+                    Amount={0}
+                    Coordinator={'Maria Rodriguez'}
+                    Location={'Juban Sorsogon'}
+                />
+                 <ProgramsCard
+                    name={'JOB SEEKERS'}
+                    status={'active'}
+                    ProjectName={'Community Cleaning Initiative'}
+                    Desc={'Street cleaning and beautification program for urban areas'}
+                    BeneficiaryNum={45 / 60}
+                    DateRange={0}
+                    Amount={0}
+                    Coordinator={'Maria Rodriguez'}
+                    Location={'Juban Sorsogon'}
+                />
+              
             </div>
         </>
     );
