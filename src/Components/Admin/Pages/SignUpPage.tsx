@@ -6,7 +6,7 @@ import axios from "axios";
 const REGISTER_URL = "http://localhost:8000/api/register/"; 
 
 // Define common styles outside the component for readability
-const pageStyle = {
+const pageStyle: React.CSSProperties = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -16,7 +16,7 @@ const pageStyle = {
     backgroundColor: '#f4f7f6', // Light background for contrast
 };
 
-const formContainerStyle = {
+const formContainerStyle: React.CSSProperties = {
     backgroundColor: "#fff",
     padding: "35px 45px", // Adjusted padding
     borderRadius: "12px",
@@ -25,7 +25,7 @@ const formContainerStyle = {
     textAlign: "center",
 };
 
-const inputStyle = {
+const inputStyle: React.CSSProperties = {
     padding: '12px',
     border: '1px solid #ddd',
     borderRadius: '6px',
@@ -35,7 +35,7 @@ const inputStyle = {
     marginBottom: '10px', // Space between inputs
 };
 
-const buttonStyle = (loading) => ({
+const buttonStyle = (loading: boolean): React.CSSProperties => ({
     width: '100%',
     padding: '12px',
     backgroundColor: loading ? '#6c757d' : '#007bff', 

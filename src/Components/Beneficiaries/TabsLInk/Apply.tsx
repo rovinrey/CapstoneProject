@@ -21,6 +21,7 @@ function ApplicationForm({ onCancel, onSubmitData }: { onCancel: () => void, onS
         dob: '',
         age: '',
         gender: '',
+        IdNumber: '',
         civilStatus: '',
         contact: '',
         homeNumber: '',
@@ -217,6 +218,17 @@ function ApplicationForm({ onCancel, onSubmitData }: { onCancel: () => void, onS
                             id="contactInput"
                             name="contact"
                             value={formData.contact}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                     <label htmlFor="IdNumber">
+                        ID Number*
+                        <input
+                            type="text"
+                            id="IdNumber"
+                            name="IdNumber"
+                            value={formData.IdNumber}
                             onChange={handleChange}
                             required
                         />

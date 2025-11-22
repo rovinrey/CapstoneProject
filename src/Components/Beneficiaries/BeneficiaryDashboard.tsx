@@ -24,7 +24,7 @@ function BeneficiaryDashboard() {
       <div className="dashboard-container">
 
 
-        {/* Summary Cards 
+        
         <div className="summary-cards">
           <div className="card">
             <div className="card-icon">
@@ -56,7 +56,7 @@ function BeneficiaryDashboard() {
             </div>
           </div>
         </div>
-          */}
+          
         {/*
         
         <div className="program-progress">
